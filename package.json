@@ -1,0 +1,20 @@
+{
+  "name": "publish",
+  "module": "index.ts",
+  "type": "module",
+  "private": true,
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "@dfinity/agent": "^3.2.2",
+    "@dfinity/candid": "^3.2.2",
+    "@dfinity/identity": "^3.2.2",
+    "@dfinity/principal": "^3.2.2",
+    "pusher": "^5.2.0",
+    "pusher-js": "^8.4.0"
+  }
+}
