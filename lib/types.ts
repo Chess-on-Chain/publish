@@ -7,5 +7,6 @@ interface WebsocketMessageQueue {
 }
 
 export interface ActorType {
-  pop_messages: () => Promise<WebsocketMessageQueue[]>;
+  get_messages: () => Promise<WebsocketMessageQueue[]>;
+  clear_messages: () => Promise<void>;
 }

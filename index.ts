@@ -24,8 +24,7 @@ const actor: ActorType = Actor.createActor(idlFactory, {
 
 while (true) {
   try {
-    const messages = await actor.pop_messages();
-    console.log({ messages });
+    const messages = await actor.get_messages();
 
     messages.forEach(async (message) => {
       const target_principal = message.principal.toText();
@@ -33,6 +32,12 @@ while (true) {
         .trigger(target_principal, message.method, message.body)
         .catch(console.error);
     });
+
+    if (messages.length >= 1) {
+      console.log({ messages });
+
+      await actor.clear_messages();
+    }
   } catch (e) {
     console.error(e);
   }

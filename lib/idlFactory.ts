@@ -5,6 +5,7 @@ export default ({ IDL }: any) => {
     body: IDL.Vec(IDL.Nat8),
   });
   return IDL.Service({
-    pop_messages: IDL.Func([], [IDL.Vec(WebsocketMessageQueue)], []),
+    get_messages: IDL.Func([], [IDL.Vec(WebsocketMessageQueue)], []),
+    clear_messages: IDL.Func([], [], []),
   });
 };
